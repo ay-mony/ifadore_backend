@@ -1,11 +1,8 @@
 const User = require('../models/User')
 
 const Login = async (req, res) => {
-    // const email = 'ayjones@gmail.com';
-    // const password = 'ayodele123123';
-    const {  email, password } = req.body
 
-    // console.log(req.body)
+    const {  email, password } = req.body
 
     try {
         const user = await User.findOne({
@@ -22,14 +19,15 @@ const Login = async (req, res) => {
         res.status(500).json(error.message)
     }
 }
+
 const Register = async (req, res) => {
 
     try {
         const user = await User.create({
             ...req.body
         })
-        await user.save()
-        res.status(201).json(user)
+        const newUser = await user.save()
+        res.status(201).json(newUser)
     } catch (error) {
         res.status(500).json(error.message)
     }

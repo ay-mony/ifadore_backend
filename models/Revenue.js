@@ -14,16 +14,3 @@ const revenueSchema = new Schema({
 
 module.exports = model('Revenue', revenueSchema)
 
-
-
-// const rev = revenueSchema.create({
-//     ...body, 
-// });
-
-// const sava = body.model.create({
-//     revenue: rev._id,
-// });
-
-// const get = Poll.find();
-// const rev = Reven.findOne({ id: get.revenue })
-// return rev
