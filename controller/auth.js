@@ -13,10 +13,10 @@ const Login = async (req, res) => {
             password
         })
 
-        if(user.email === 'ayjones@gmail.com' && user.password === 'ayodele123123'){
-            res.status(200).json('Login success!!')
-        } else {
+        if(user.email !== 'ayjones@gmail.com' && user.password !== 'ayodele123123'){
             res.status(401).json('Incorrect username and pasoword')
+        } else {
+            res.status(200).json('Login success!!')
         }
     } catch (error) {
         res.status(500).json(error.message)

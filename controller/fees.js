@@ -1,22 +1,22 @@
-const PollTax = require('../models/PollTax');
+const Fees = require('../models/Fees');
 const Revenue = require('../models/Revenue')
 
-const createPollTax = async (req, res) => {
+const createFeeTax = async (req, res) => {
     try {
-        const tax = await PollTax.create({
+        const newTax = await Fees.create({
             ...req.body
         })
-        await tax.save()
-        res.status(201).json('PollTax submitted!')
+        const tax = await newTax.save()
+        res.status(201).json(tax)
     } catch (error) {
         res.status(500).json(error.message)
     }
 }
 
 
-const getPollTax = async (req, res) => {
+const getFeeTax = async (req, res) => {
     try {
-        const tax = await PollTax.find()
+        const tax = await Fees.find()
         const revenue = Revenue.findOne({
             id: tax._id
         })
@@ -27,4 +27,4 @@ const getPollTax = async (req, res) => {
 }
     
 
-module.exports = { createPollTax, getPollTax }
+module.exports = { createFeeTax, getFeeTax }

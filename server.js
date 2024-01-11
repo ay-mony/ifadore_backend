@@ -4,6 +4,7 @@ const morgan = require('morgan')
 const cors = require('cors');
 const connectDB = require('./config');
 const authRoute  = require('./routes/authRoute')
+const polltaxRoute = require('./routes/polltaxRoute')
 
 
 const app = express()
@@ -14,6 +15,7 @@ app.use(morgan('common'))
 
 
 app.use('/api/auth', authRoute)
+app.use('/api/polltax', polltaxRoute)
 
 const port = process.env.PORT || 8800
 app.listen(port, () => {

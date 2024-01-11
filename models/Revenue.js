@@ -6,9 +6,11 @@ const revenueSchema = new Schema({
     phone: String,
     address: String,
     amount: Number,
-    date: Date,
+    date: String,
     taxOfTax: String,
-})
+},
+    { timestamps: true }
+)
 
 module.exports = model('Revenue', revenueSchema)
 

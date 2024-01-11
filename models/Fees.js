@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
-const { Schema, model } = mongoose
+const {Schema, model } = mongoose
 
-const polltaxSchema = new Schema({
+const FeeSchema = new Schema({
     revenue: {
         type: Schema.Types.ObjectId,
         ref: 'Revenue'
     }  
 })
 
-module.exports = model('PollTax', polltaxSchema)
+module.exports = model('Fees', FeeSchema)
