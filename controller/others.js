@@ -1,7 +1,7 @@
 const Others = require('../models/Others');
 const Revenue = require('../models/Revenue')
 
-const createRent = async (req, res) => {
+const createOtherTax = async (req, res) => {
     try {
         const newOtherTax = await Others.create({
             ...req.body
@@ -14,7 +14,7 @@ const createRent = async (req, res) => {
 }
 
 
-const getRent = async (req, res) => {
+const getOtherTax = async (req, res) => {
     try {
         const others = await Others.find()
         const revenue = Revenue.findOne({
@@ -27,4 +27,4 @@ const getRent = async (req, res) => {
 }
     
 
-module.exports = { createRent, getRent }
+module.exports = { createOtherTax, getOtherTax }

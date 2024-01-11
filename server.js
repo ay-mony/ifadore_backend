@@ -7,6 +7,7 @@ const authRoute  = require('./routes/authRoute')
 const polltaxRoute = require('./routes/polltaxRoute')
 const feeRoute = require('./routes/feeRoute')
 const rentRoute = require('./routes/rentRoute')
+const rentRoute = require('./routes/polltaxRoute')
 
 
 const app = express()

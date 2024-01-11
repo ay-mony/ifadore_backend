@@ -1,7 +1,7 @@
 const Earnings = require('../models/Earnings');
 const Revenue = require('../models/Revenue')
 
-const createRent = async (req, res) => {
+const createEarning = async (req, res) => {
     try {
         const newEarn = await Earnings.create({
             ...req.body
@@ -14,7 +14,7 @@ const createRent = async (req, res) => {
 }
 
 
-const getRent = async (req, res) => {
+const getEarning = async (req, res) => {
     try {
         const earning = await Earnings.find()
         const revenue = Revenue.findOne({
@@ -27,4 +27,4 @@ const getRent = async (req, res) => {
 }
     
 
-module.exports = { createRent, getRent }
+module.exports = { createEarning, getEarning }
