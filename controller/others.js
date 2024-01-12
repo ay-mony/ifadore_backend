@@ -17,10 +17,8 @@ const createOtherTax = async (req, res) => {
 const getOtherTax = async (req, res) => {
     try {
         const others = await Others.find()
-        const revenue = Revenue.findOne({
-            id: others._id
-        })
-        res.status(200).json(revenue)
+
+        res.status(200).json(others)
     } catch (error) {
         res.status(500).json(error.message)
     }

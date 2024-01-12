@@ -16,11 +16,9 @@ const createFeeTax = async (req, res) => {
 
 const getFeeTax = async (req, res) => {
     try {
-        const tax = await Fees.find()
-        const revenue = Revenue.findOne({
-            id: tax._id
-        })
-        res.status(200).json(revenue)
+        const fees = await Fees.find()
+
+        res.status(200).json(fees)
     } catch (error) {
         res.status(500).json(error.message)
     }

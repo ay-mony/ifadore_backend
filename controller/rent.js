@@ -17,10 +17,8 @@ const createRent = async (req, res) => {
 const getRent = async (req, res) => {
     try {
         const rent = await Rent.find()
-        const revenue = Revenue.findOne({
-            id: rent._id
-        })
-        res.status(200).json(revenue)
+ 
+        res.status(200).json(rent)
     } catch (error) {
         res.status(500).json(error.message)
     }

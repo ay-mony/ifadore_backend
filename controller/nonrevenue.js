@@ -16,11 +16,9 @@ const createNonRevenue = async (req, res) => {
 
 const getNonRevenue = async (req, res) => {
     try {
-        const others = await NonRevenue.find()
-        const revenue = Revenue.findOne({
-            id: others._id
-        })
-        res.status(200).json(revenue)
+        const nonrevenue = await NonRevenue.find()
+
+        res.status(200).json(nonrevenue)
     } catch (error) {
         res.status(500).json(error.message)
     }

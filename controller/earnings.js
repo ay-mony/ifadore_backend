@@ -17,10 +17,7 @@ const createEarning = async (req, res) => {
 const getEarning = async (req, res) => {
     try {
         const earning = await Earnings.find()
-        const revenue = Revenue.findOne({
-            id: earning._id
-        })
-        res.status(200).json(revenue)
+        res.status(200).json(earning)
     } catch (error) {
         res.status(500).json(error.message)
     }
