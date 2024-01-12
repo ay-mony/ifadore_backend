@@ -17,10 +17,7 @@ const createPollTax = async (req, res) => {
 const getPollTax = async (req, res) => {
     try {
         const tax = await PollTax.find()
-        const revenue = Revenue.findOne({
-            id: tax._id
-        })
-        res.status(200).json(revenue)
+        res.status(200).json(tax)
     } catch (error) {
         res.status(500).json(error.message)
     }

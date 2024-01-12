@@ -4,7 +4,7 @@ const router = express.Router()
 
 const { getPollTax, createPollTax } = require('../controller/polltax')
 
-router.post('/:id', createPollTax)
+router.post('/', createPollTax)
 
 router.get('/', getPollTax)
 

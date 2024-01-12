@@ -2,12 +2,24 @@ const mongoose = require('mongoose');
 const {Schema, model } = mongoose
 
 const revenueSchema = new Schema({
-    fullName: String,
-    phone: String,
-    address: String,
-    amount: Number,
-    date: String,
-    taxOfTax: String,
+    fullName: {
+        type: String
+    },
+    phone:  {
+        type: String
+    },
+    address:  {
+        type: String
+    },
+    amount:  {
+        type: String
+    },
+    date:  {
+        type: String
+    },
+    taxOfTax:  {
+        type: String
+    },
 },
     { timestamps: true }
 )
