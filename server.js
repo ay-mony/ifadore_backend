@@ -8,6 +8,9 @@ const polltaxRoute = require('./routes/polltaxRoute')
 const feeRoute = require('./routes/feeRoute')
 const rentRoute = require('./routes/rentRoute')
 const rentRoute = require('./routes/polltaxRoute')
+const earningRoute = require('./routes/earningRoute')
+const othersReoute = require('./routes/othersRoute')
+const nonrevenueRoute = require('./routes/nonrevenueRoute')
 
 
 const app = express()
@@ -21,6 +24,9 @@ app.use('/api/auth', authRoute)
 app.use('/api/polltax', polltaxRoute)
 app.use('/api/fees', feeRoute)
 app.use('/api/rent', rentRoute)
+app.use('/api/earning', earningRoute)
+app.use('/api/others', othersReoute)
+app.use('/api/nonrevenue', nonrevenueRoute)
 
 const port = process.env.PORT || 8800
 app.listen(port, () => {
