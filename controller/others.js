@@ -1,5 +1,4 @@
 const Others = require('../models/Others');
-const Revenue = require('../models/Revenue')
 
 const createOtherTax = async (req, res) => {
     try {

@@ -1,5 +1,4 @@
 const PollTax = require('../models/PollTax');
-const Revenue = require('../models/Revenue')
 
 const createPollTax = async (req, res) => {
     try {
@@ -22,6 +21,26 @@ const getPollTax = async (req, res) => {
         res.status(500).json(error.message)
     }
 }
+
+
+
+const getTotalAmount = async (req, res) => {
+    try {
+        const totalAmount = await PollTax.aggregate([
+            {
+                $group: {
+                    _id: null,
+                    totalAmount: { $sum: { $toDouble: '$amount' } }
+                }
+            }
+        ]);
+
+        res.status(200).json({ totalAmount: totalAmount[0].totalAmount || 0 });
+    } catch (error) {
+        res.status(500).json(error.message);
+    }
+}
+
     
 
-module.exports = { createPollTax, getPollTax }
+module.exports = { createPollTax, getPollTax, getTotalAmount }

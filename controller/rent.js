@@ -1,5 +1,4 @@
 const Rent = require('../models/Rent');
-const Revenue = require('../models/Revenue')
 
 const createRent = async (req, res) => {
     try {
