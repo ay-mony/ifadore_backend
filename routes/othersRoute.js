@@ -4,7 +4,7 @@ const router = express.Router()
 
 const { createOtherTax, getOtherTax } = require('../controller/others')
 
-router.post('/:id', createOtherTax)
+router.post('/', createOtherTax)
 
 router.get('/', getOtherTax)
 

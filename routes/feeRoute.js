@@ -4,7 +4,7 @@ const router = express.Router()
 
 const { createFeeTax, getFeeTax, getTotalAmount } = require('../controller/fees')
 
-router.post('/:id', createFeeTax)
+router.post('/', createFeeTax)
 
 router.get('/', getFeeTax)
 

@@ -17,7 +17,7 @@ const OthersSchema = new Schema({
     date:  {
         type: String
     },
-    taxOfTax:  {
+    typeOfTax:  {
         type: String
     },
 },

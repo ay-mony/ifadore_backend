@@ -10,6 +10,7 @@ const rentRoute = require('./routes/rentRoute')
 const earningRoute = require('./routes/earningRoute')
 const othersReoute = require('./routes/othersRoute')
 const nonrevenueRoute = require('./routes/nonrevenueRoute')
+const licenceRoute = require('./routes/licenceRoute')
 
 
 const app = express()
@@ -26,6 +27,7 @@ app.use('/api/rent', rentRoute)
 app.use('/api/earning', earningRoute)
 app.use('/api/others', othersReoute)
 app.use('/api/nonrevenue', nonrevenueRoute)
+app.use('/api/licence', licenceRoute)
 
 const port = process.env.PORT || 8800
 app.listen(port, () => {

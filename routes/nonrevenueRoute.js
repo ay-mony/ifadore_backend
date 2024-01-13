@@ -4,7 +4,7 @@ const router = express.Router()
 
 const { createNonRevenue, getNonRevenue } = require('../controller/nonrevenue')
 
-router.post('/:id', createNonRevenue)
+router.post('/', createNonRevenue)
 
 router.get('/', getNonRevenue)
 

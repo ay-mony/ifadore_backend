@@ -4,7 +4,7 @@ const router = express.Router()
 
 const { createEarning, getEarning, getTotalAmount } = require('../controller/earnings')
 
-router.post('/:id', createEarning)
+router.post('/', createEarning)
 
 router.get('/', getEarning)
 

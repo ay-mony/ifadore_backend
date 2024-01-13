@@ -17,7 +17,7 @@ const NonRevenueSchema = new Schema({
     date:  {
         type: String
     },
-    taxOfTax:  {
+    typeOfTax:  {
         type: String
     },
 },
